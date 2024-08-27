@@ -11,25 +11,26 @@
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-#define DVRK           0
-#define QWRT           1
-#define GAME           2
-#define SYM            3
-#define NUM            4
-#define SYST           5
-#define FUNC           6
-#define MODF           7
+#define DVRK              0
+#define QWRT              1
+#define GAME              2
+#define SYM               3
+#define NUM               4
+#define SYST              5
+#define FUNC              6
+#define MODF              7
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-#define __             &none
-#define xx             &trans
+#define __                &none
+#define xx                &trans
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 // GLOBAL SETTINGS
 
-#define QUICK_TAP_MS   175
+#define TAPPING_TERM_MS   125
+#define QUICK_TAP_MS      175
 
 // &lt {
 //     flavor = "balanced";
@@ -48,7 +49,7 @@
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
     ZMK_HOLD_TAP(NAME, \
         flavor = "balanced"; \
-        tapping-term-ms = <200>; \
+        tapping-term-ms = <TAPPING_TERM_MS>; \
         quick-tap-ms = <QUICK_TAP_MS>; \
         require-prior-idle-ms = <150>; \
         bindings = <HOLD>, <TAP>; \
