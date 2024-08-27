@@ -64,25 +64,11 @@ MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)
 
 MAKE_QHT(qht, &kp, &kp)
+MAKE_QHT(qlt, &mo, &kp)
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 / {
-    behaviors {
-      #include "macros.dtsi"
-
-      qlt: quick_layer_tap {
-          compatible = "zmk,behavior-hold-tap";
-          label = "QUICK_LAYER_TAP";
-          #binding-cells = <2>;
-          tapping-term-ms = <TAPPING_TERM_MS>;
-          quick_tap_ms = <175>;
-          flavor = "hold-preferred";
-          retro-tap;
-          bindings = <&mo>, <&kp>;
-      };
-    
-    };
     
   keymap {
     compatible = "zmk,keymap";
