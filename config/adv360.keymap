@@ -4,6 +4,9 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/backlight.h>
 
+#include "zmk-helpers/helper.h"
+#include "zmk-helpers/key-labels/adv360_custom.h"
+
 #define DVRK           1
 #define QWRT           2
 #define GAME           3
