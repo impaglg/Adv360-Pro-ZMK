@@ -51,7 +51,7 @@
         hold-trigger-on-release; \
     )
     
-#define MAKE_QLT(NAME, HOLD, TAP) \
+#define MAKE_QHT(NAME, HOLD, TAP) \
     ZMK_HOLD_TAP(NAME, \
         flavor = "hold-preferred"; \
         tapping-term-ms = <TAPPING_TERM_MS>; \
