@@ -15,7 +15,7 @@
 
 #define &none   __
 #define &trans  ++ 
-#define RGB_MEFS_CMD &rgb_ug RGB_MEFS_CMD 5
+#define &rgb_ug RGB_MEFS_CMD 5 RGB_MEFS_CMD
 
 / {
     behaviors {
