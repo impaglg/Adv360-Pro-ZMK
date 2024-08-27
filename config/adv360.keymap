@@ -11,14 +11,14 @@
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-#define DVRK           1
-#define QWRT           2
-#define GAME           3
-#define SYM            4
-#define NUM            5
-#define SYST           6
-#define FUNC           7
-#define MODF           8
+#define DVRK           0
+#define QWRT           1
+#define GAME           2
+#define SYM            3
+#define NUM            4
+#define SYST           5
+#define FUNC           6
+#define MODF           7
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
@@ -31,11 +31,11 @@
 
 #define QUICK_TAP_MS   175
 
-&lt {
-    flavor = "balanced";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <QUICK_TAP_MS>;
-};
+// &lt {
+//     flavor = "balanced";
+//     tapping-term-ms = <200>;
+//     quick-tap-ms = <QUICK_TAP_MS>;
+// };
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
