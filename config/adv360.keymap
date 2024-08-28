@@ -69,21 +69,21 @@ MAKE_QHT(qlt, &mo, &kp)
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
+#define MAKE_COMBO(NAME, BINDINGS, KEYPOS) \
+  COMBO_##NAME { \
+    timeout-ms = <COMBO_REG_TIMEOUT_MS>; \
+    key-positions = <KEYPOS>; \
+    bindings = <BINDINGS>; \
+  };
+
+// ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
 / {
 
   combos {
-    compatible = "zmk,combos";
-    COMBO_LCTRL {
-      timeout-ms = <COMBO_REG_TIMEOUT_MS>;
-      key-positions = <LM1 LB3>;
-      bindings = <&kp LCTRL>;
-    };
-    
-    COMBO_RCTRL {
-      timeout-ms = <COMBO_REG_TIMEOUT_MS>;
-      key-positions = <RM1 RB3>;
-      bindings = <&kp LCTRL>;
-    };
+
+      MAKE_COMBO(LCTRL, &kp LCTRL, LM1 LM3)
+
   };
     
   keymap {
