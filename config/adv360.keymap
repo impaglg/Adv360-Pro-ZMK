@@ -32,41 +32,24 @@
 #define TAPPING_TERM_MS         125
 #define QUICK_TAP_MS            175
 
-#define COMBO_REG_TIMEOUT_MS    30
+#define COMBO_REG_TIMEOUT_MS    35
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-#define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4
-#define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4
-#define THUMBS LH2 LH1 LH0 RH0 RH1 RH2
+#define KEYS_L      0 1 2 3 4 5 6 \
+                    14 15 16 17 18 19 20 \
+                    28 29 30 31 32 33 34 \
+                    46 47 48 49 50 51 \
+                    60 61 62 63 64
 
-// ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+#define KEYS_R      7 8 9 10 11 12 13 \
+                    21 22 23 24 25 26 27 \
+                    39 40 41 42 43 44 45 \
+                    54 55 56 57 58 59 \
+                    71 72 73 74 75
 
-#define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
-    ZMK_HOLD_TAP(NAME, \
-        flavor = "balanced"; \
-        tapping-term-ms = <250>; \
-        quick-tap-ms = <QUICK_TAP_MS>; \
-        require-prior-idle-ms = <150>; \
-        bindings = <HOLD>, <TAP>; \
-        hold-trigger-key-positions = <TRIGGER_POS>; \
-        hold-trigger-on-release; \
-    )
-    
-#define MAKE_QHT(NAME, HOLD, TAP) \
-    ZMK_HOLD_TAP(NAME, \
-        flavor = "hold-preferred"; \
-        tapping-term-ms = <TAPPING_TERM_MS>; \
-        quick-tap-ms = <QUICK_TAP_MS>; \
-        bindings = <HOLD>, <TAP>; \
-        retro-tap; \
-    )
-
-MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)
-MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)
-
-MAKE_QHT(qht, &kp, &kp)
-MAKE_QHT(qlt, &mo, &kp)
+#define THUMBS_L    35 36 52 65 66 67
+#define THUMBS_R    37 38 53 68 69 70
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
@@ -77,27 +60,37 @@ MAKE_QHT(qlt, &mo, &kp)
     bindings = <BINDINGS>; \
   };
 
+#define MAKE_QLT(NAME, HOLD, TAP) \
+    ZMK_HOLD_TAP(NAME, \
+        flavor = "hold-preferred"; \
+        tapping-term-ms = <TAPPING_TERM_MS>; \
+        quick-tap-ms = <QUICK_TAP_MS>; \
+        bindings = <HOLD>, <TAP>; \
+        retro-tap; \
+    )
+
+MAKE_QLT(qlt, &mo, &kp)
+
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 / {
 
   combos {
+
       compatible = "zmk,combos";
 
-//      MAKE_COMBO(LSYM,  &mo SYM,   LM4 LM1)
-//      MAKE_COMBO(LCTRL, &kp LCTRL, LM3 LM1)
+          MAKE_COMBO(LSYM,  &mo SYM,   29 32)
+          MAKE_COMBO(LCTRL, &kp LCTRL, 30 32)
+          MAKE_COMBO(LSHFT, &kp LSHFT, 30 46)
 
-        MAKE_COMBO(LSYM,  &mo SYM,   29 32)
-        MAKE_COMBO(LCTRL, &kp LCTRL, 30 32)
-        MAKE_COMBO(LSHFT, &kp LSHFT, 30 46)
-
-        MAKE_COMBO(RSYM,  &mo SYM,   RM4 RM1)
-        MAKE_COMBO(RCTRL, &kp LCTRL, RM3 RM1)
-        MAKE_COMBO(RSHFT, &kp RSHFT, RM3 RB1)
+          MAKE_COMBO(RSYM,  &mo SYM,   RM4 RM1)
+          MAKE_COMBO(RCTRL, &kp LCTRL, RM3 RM1)
+          MAKE_COMBO(RSHFT, &kp RSHFT, RM3 RB1)
 
   };
     
   keymap {
+
     compatible = "zmk,keymap";
 
     DVORAK {      
