@@ -78,10 +78,7 @@ MAKE_QHT(qlt, &mo, &kp)
       key-positions = <LM1 LB3>;
       bindings = <&kp LCTRL>;
     };
-  };
     
-  combos {
-    compatible = "zmk,combos";
     COMBO_RCTRL {
       timeout-ms = <COMBO_REG_TIMEOUT_MS>;
       key-positions = <RM1 RB3>;
