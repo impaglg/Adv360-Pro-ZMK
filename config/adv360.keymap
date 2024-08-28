@@ -81,8 +81,10 @@ MAKE_QHT(qlt, &mo, &kp)
 / {
 
   combos {
+      compatible = "zmk,combos";
 
-      MAKE_COMBO(LCTRL, &kp LCTRL, LM1 LM3)
+        MAKE_COMBO(LCTRL, &kp LCTRL, LM1 LM3)
+        MAKE_COMBO(RCTRL, &kp LCTRL, RM1 RM3)
 
   };
     
