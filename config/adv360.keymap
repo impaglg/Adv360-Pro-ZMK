@@ -32,7 +32,7 @@
 #define TAPPING_TERM_MS         125
 #define QUICK_TAP_MS            175
 
-#define COMBO_REG_TIMEOUT_MS    50
+#define COMBO_REG_TIMEOUT_MS    125
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
@@ -79,13 +79,13 @@ MAKE_QLT(qlt, &mo, &kp)
 
       compatible = "zmk,combos";
 
-          MAKE_COMBO(LSYM,  &mo SYM,   30 31 32)
-          MAKE_COMBO(LCTRL, &kp LCTRL, 29 30 32)
+          MAKE_COMBO(LCTRL, &kp LCTRL, 48 50)
           MAKE_COMBO(LSHFT, &kp LSHFT, 29 30 50)
+          MAKE_COMBO(LSYM,  &mo SYM,   30 31 32)
 
+          MAKE_COMBO(RCTRL, &kp LCTRL, 55 57)
+          MAKE_COMBO(RSHFT, &kp RSHFT, 56 43 44)
           MAKE_COMBO(RSYM,  &mo SYM,   41 42 43)
-          MAKE_COMBO(RCTRL, &kp LCTRL, 41 43 44)
-          MAKE_COMBO(RSHFT, &kp RSHFT, 41 43 56)
 
   };
     
