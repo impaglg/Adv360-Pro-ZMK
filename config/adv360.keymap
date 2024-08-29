@@ -104,9 +104,6 @@ MAKE_QLT(qlt, &mo, &kp)
 //        MAKE_COMBO(RSHFT, &kp RSHFT, 56 43 44)
 //        MAKE_COMBO(RSYM,  &mo SYM,   41 42 43)
 
-      hello there my man how get out of here 
-      
-
   };
     
   keymap {
