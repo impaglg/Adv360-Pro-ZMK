@@ -105,8 +105,6 @@ MAKE_QLT(qlt, &mo, &kp)
 //        MAKE_COMBO(RSYM,  &mo SYM,   41 42 43)
 
   };
-
-  hello there get out otot ot ot o. for
     
   keymap {
 
