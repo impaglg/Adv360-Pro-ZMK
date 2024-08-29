@@ -60,6 +60,17 @@
     bindings = <BINDINGS>; \
   };
 
+#define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
+    ZMK_HOLD_TAP(NAME, \
+        flavor = "balanced"; \
+        tapping-term-ms = <280>; \
+        quick-tap-ms = <QUICK_TAP_MS>; \
+        require-prior-idle-ms = <150>; \
+        bindings = <HOLD>, <TAP>; \
+        hold-trigger-key-positions = <TRIGGER_POS>; \
+        hold-trigger-on-release; \
+    )
+
 #define MAKE_QLT(NAME, HOLD, TAP) \
     ZMK_HOLD_TAP(NAME, \
         flavor = "hold-preferred"; \
@@ -68,6 +79,12 @@
         bindings = <HOLD>, <TAP>; \
         retro-tap; \
     )
+
+MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS_L THUMBS_R)
+MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS_L THUMBS_R)
+
+MAKE_HRM(lml, &mo, &kp, KEYS_R THUMBS_L THUMBS_R)
+MAKE_HRM(lmr, &mo, &kp, KEYS_L THUMBS_L THUMBS_R)
 
 MAKE_QLT(qlt, &mo, &kp)
 
@@ -79,13 +96,13 @@ MAKE_QLT(qlt, &mo, &kp)
 
       compatible = "zmk,combos";
 
-          MAKE_COMBO(LCTRL, &kp LCTRL, 48 50)
-          MAKE_COMBO(LSHFT, &kp LSHFT, 29 30 50)
-          MAKE_COMBO(LSYM,  &mo SYM,   30 31 32)
+//        MAKE_COMBO(LCTRL, &kp LCTRL, 48 50)
+//        MAKE_COMBO(LSHFT, &kp LSHFT, 29 30 50)
+//        MAKE_COMBO(LSYM,  &mo SYM,   30 31 32)
 
-          MAKE_COMBO(RCTRL, &kp LCTRL, 55 57)
-          MAKE_COMBO(RSHFT, &kp RSHFT, 56 43 44)
-          MAKE_COMBO(RSYM,  &mo SYM,   41 42 43)
+//        MAKE_COMBO(RCTRL, &kp LCTRL, 55 57)
+//        MAKE_COMBO(RSHFT, &kp RSHFT, 56 43 44)
+//        MAKE_COMBO(RSYM,  &mo SYM,   41 42 43)
 
   };
     
@@ -100,7 +117,7 @@ MAKE_QLT(qlt, &mo, &kp)
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤                                               ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
            __      &kp SEMI    &kp COMMA     &kp DOT       &kp P        &kp Y       __                                                        __        &kp F        &kp G       &kp C        &kp R       &kp L        __
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤    ╭─────────┬─────────╮ ╭─────────┬─────────╮    ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
-           __       &kp A        &kp O        &kp E        &kp U        &kp I       __            __        __         __       __            __        &kp D        &kp H       &kp T        &kp N       &kp S        __
+           __       &kp A    &hml LCTRL O     &kp E     &lml SYM U      &kp I       __            __        __         __       __            __        &kp D    &lmr SYM H      &kp T    &hmr LCTRL N    &kp S        __
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────╯             ├─────────┤ ├─────────┤             ╰─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
            __      &kp SQT       &kp Q        &kp J        &kp K        &kp X                           &tog GAME      __                               &kp B        &kp M       &kp W        &kp V       &kp Z        __ 
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯  ╭───────────┬─────────┼─────────┤ ╭─────────┼─────────┬───────────╮  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
