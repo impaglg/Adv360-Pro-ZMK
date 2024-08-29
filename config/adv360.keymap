@@ -104,8 +104,6 @@ MAKE_QLT(qlt, &mo, &kp)
 //        MAKE_COMBO(RSHFT, &kp RSHFT, 56 43 44)
 //        MAKE_COMBO(RSYM,  &mo SYM,   41 42 43)
 
-hello there my man how the hell are you even doing over there eout out out out out out occall me oc oc oc oc oc call me oc inside her eyes for
-
   };
     
   keymap {
