@@ -59,8 +59,8 @@
     ZMK_HOLD_TAP(NAME, \
         flavor = "balanced"; \
         tapping-term-ms = <125>; \
-        quick-tap-ms = <75>; \
-        require-prior-idle-ms = <75>; \
+        quick-tap-ms = <95>; \
+        require-prior-idle-ms = <95>; \
         bindings = <HOLD>, <TAP>; \
         hold-trigger-key-positions = <TRIGGER_POS>; \
         hold-trigger-on-release; \
