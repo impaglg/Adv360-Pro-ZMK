@@ -58,7 +58,7 @@
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
     ZMK_HOLD_TAP(NAME, \
         flavor = "balanced"; \
-        tapping-term-ms = <240>; \
+        tapping-term-ms = <220>; \
         quick-tap-ms = <175>; \
         require-prior-idle-ms = <150>; \
         bindings = <HOLD>, <TAP>; \
@@ -75,11 +75,11 @@
         retro-tap; \
     )
 
-MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS_L THUMBS_R)
-MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS_L THUMBS_R)
+MAKE_HRM(hml, &kp, &kp, KEYS_R)
+MAKE_HRM(hmr, &kp, &kp, KEYS_L)
 
-// MAKE_HRM(lml, &mo, &kp, KEYS_R THUMBS_L THUMBS_R)
-// MAKE_HRM(lmr, &mo, &kp, KEYS_L THUMBS_L THUMBS_R)
+MAKE_HRM(lml, &mo, &kp, KEYS_R)
+MAKE_HRM(lmr, &mo, &kp, KEYS_L)
 
 MAKE_QLT(qlt, &mo, &kp)
 
@@ -112,11 +112,11 @@ MAKE_QLT(qlt, &mo, &kp)
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤                                               ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
          &kp TAB   &kp SEMI    &kp COMMA     &kp DOT       &kp P        &kp Y       __                                                        __        &kp F        &kp G       &kp C        &kp R       &kp L     &kp ESC
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤    ╭─────────┬─────────╮ ╭─────────┬─────────╮    ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
-        &kp LCTRL   &kp A     &hml LCTRL O    &kp E        &kp U        &kp I       __            __        __         __       __            __        &kp D        &kp H       &kp T    &hmr LCTRL N    &kp S     &kp LCTRL
+           __    &hml LGUI A  &hml LCTRL O &hml LALT E  &hml LSHFT U    &kp I       __            __        __         __       __            __        &kp D    &hmr RSHFT  &hmr LALT N  &hmr LCTRL N  &hmr LGUI S &kp LCTRL
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────╯             ├─────────┤ ├─────────┤             ╰─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
-        &kp LSHFT  &kp SQT    &hml LCTRL Q    &kp J        &kp K        &kp X                               __         __                               &kp B        &kp M       &kp W    &hmr LCTRL V    &kp Z     &kp LSHFT
+           __      &kp SQT       &kp Q        &kp J      &lml SYM K     &kp X                               __         __                               &kp B    &lmr SYM M      &kp W    &hmr LCTRL V    &kp Z     &kp LSHFT
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯  ╭───────────┬─────────┼─────────┤ ╭─────────┼─────────┬───────────╮  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
-           __         __           __        &kp DOWN      &kp UP                 &qlt NUM BSPC &mo SYM     __         __ &qlt SYM RET  &kp SPACE                  &kp LEFT    &kp RIGHT       __           __         __  
+           __         __           __        &kp DOWN      &kp UP                  &qlt NUM BSPC  __        __         __    &kp RET  &kp SPACE                    &kp LEFT    &kp RIGHT       __           __         __  
 //     ╰─────────┴─────────────┴─────────────┴─────────────┴─────────────╯               ╰───────────┴─────────┴─────────╯ ╰─────────┴─────────┴───────────╯               ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────╯
       >;
     };
