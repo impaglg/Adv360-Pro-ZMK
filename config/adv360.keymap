@@ -75,11 +75,11 @@
         retro-tap; \
     )
 
-MAKE_HRM(hml, &kp, &kp, KEYS_R)
-MAKE_HRM(hmr, &kp, &kp, KEYS_L)
+MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS_L THUMBS_R)
+MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS_L THUMBS_R)
 
-MAKE_HRM(lml, &mo, &kp, KEYS_R)
-MAKE_HRM(lmr, &mo, &kp, KEYS_L)
+MAKE_HRM(lml, &mo, &kp, KEYS_R THUMBS_L THUMBS_R)
+MAKE_HRM(lmr, &mo, &kp, KEYS_L THUMBS_L THUMBS_R)
 
 MAKE_QLT(qlt, &mo, &kp)
 
