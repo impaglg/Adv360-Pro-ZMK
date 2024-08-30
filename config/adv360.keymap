@@ -58,9 +58,9 @@
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
     ZMK_HOLD_TAP(NAME, \
         flavor = "balanced"; \
-        tapping-term-ms = <200>; \
+        tapping-term-ms = <250>; \
         quick-tap-ms = <175>; \
-        require-prior-idle-ms = <75>; \
+        require-prior-idle-ms = <130>; \
         bindings = <HOLD>, <TAP>; \
         hold-trigger-key-positions = <TRIGGER_POS>; \
         hold-trigger-on-release; \
