@@ -21,6 +21,7 @@
 #define __                      &none
 #define xx                      &trans
 #define LEADER                  &qlt NUM BSPC
+#define FUNC                    &mo FUNC
 
 #define PLAY_PAUSE              &kp C_PLAY_PAUSE
 #define NEXT                    &kp C_NEXT
@@ -35,9 +36,8 @@
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-// GLOBAL SETTINGS
-
 #define TAPPING_TERM_MS         125
+#define STICKY_KEY_RELEASE_MS   750
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
@@ -58,9 +58,8 @@
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-// originally was around 1600
 &sk {
-  release-after-ms = <1000>;
+  release-after-ms = <STICKY_KEY_RELEASE_MS>;
   quick-release;
 };
 
@@ -70,23 +69,23 @@
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-#define MAKE_COMBO(NAME, BINDINGS, KEYPOS) \
-  COMBO_##NAME { \
-    timeout-ms = <TAPPING_TERM_MS>; \
-    key-positions = <KEYPOS>; \
-    bindings = <BINDINGS>; \
-  };
+// #define MAKE_COMBO(NAME, BINDINGS, KEYPOS) \
+  // COMBO_##NAME { \
+    // timeout-ms = <TAPPING_TERM_MS>; \
+    // key-positions = <KEYPOS>; \
+    // bindings = <BINDINGS>; \
+  // };
 
-#define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
-    ZMK_HOLD_TAP(NAME, \
-        flavor = "balanced"; \
-        tapping-term-ms = <250>; \
-        quick-tap-ms = <175>; \
-        require-prior-idle-ms = <130>; \
-        bindings = <HOLD>, <TAP>; \
-        hold-trigger-key-positions = <TRIGGER_POS>; \
-        hold-trigger-on-release; \
-    )
+// #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
+    // ZMK_HOLD_TAP(NAME, \
+        // flavor = "balanced"; \
+        // tapping-term-ms = <250>; \
+        // quick-tap-ms = <175>; \
+        // require-prior-idle-ms = <130>; \
+        // bindings = <HOLD>, <TAP>; \
+        // hold-trigger-key-positions = <TRIGGER_POS>; \
+        // hold-trigger-on-release; \
+    // )
 
 #define MAKE_QLT(NAME, HOLD, TAP) \
     ZMK_HOLD_TAP(NAME, \
@@ -97,23 +96,7 @@
         retro-tap; \
     )
 
-#define MAKE_QST(NAME, HOLD, TAP) \
-    ZMK_HOLD_TAP(NAME, \
-        flavor = "balanced"; \
-        tapping-term-ms = <TAPPING_TERM_MS>; \
-        quick-tap-ms = <175>; \
-        bindings = <HOLD>, <TAP>; \
-        retro-tap; \
-    )
-
-MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS_L THUMBS_R)
-MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS_L THUMBS_R)
-
-MAKE_HRM(lml, &mo, &kp, KEYS_R THUMBS_L THUMBS_R)
-MAKE_HRM(lmr, &mo, &kp, KEYS_L THUMBS_L THUMBS_R)
-
 MAKE_QLT(qlt, &mo, &kp)
-MAKE_QST(qst, &sk, &kp)
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
@@ -123,20 +106,9 @@ MAKE_QST(qst, &sk, &kp)
 
       compatible = "zmk,combos";
 
-//        MAKE_COMBO(LCTRL, &kp LCTRL, )
-//        MAKE_COMBO(LSHFT, &kp LSHFT, 29 64)
-//        MAKE_COMBO(LSYM,  &mo SYM,   30 64)
-
-//        MAKE_COMBO(RCTRL, &kp LCTRL, )
-//        MAKE_COMBO(RSHFT, &kp RSHFT, 44 71)
-//        MAKE_COMBO(RSYM,  &mo SYM,   43 71)
-
-    // make the SHIFT key sticky, make the LEADER key sticky, make CAPS WORD (NUM WORD too?)...
-    // and find out what to do with the NUMBER layer...
-    // move the kp 0 key from the thumb cluster...
-    // maybe I cannot make the leader key sticky...
-
   };
+  
+  // think about making the CAPS LOCK key also a CAPS WORD key by default
 
   keymap {
 
@@ -145,7 +117,7 @@ MAKE_QST(qst, &sk, &kp)
     DVORAK {      
       bindings = <
 //     ╭─────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────╮                                               ╭─────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────╮
-           __      &kp PLUS     &kp LBRC     &kp LBKT    &kp LPAR     &kp MINUS     __                                                     &mo LOW   &kp EQUAL    &kp RPAR     &kp RBKT     &kp RBRC     &kp FSLH      __
+           __         __           __           __           __           __        __                                                     &mo LOW       __           __          __           __           __         __
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤                                               ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
          &kp TAB   &kp SEMI    &kp COMMA     &kp DOT       &kp P        &kp Y       __                                                        __        &kp F       &kp G        &kp C        &kp R       &kp L     &kp ESC
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤    ╭─────────┬─────────╮ ╭─────────┬─────────╮    ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
@@ -153,9 +125,9 @@ MAKE_QST(qst, &sk, &kp)
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────╯             ├─────────┤ ├─────────┤             ╰─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
         &sk LSHFT  &kp SQT       &kp Q        &kp J        &kp K        &kp X                               __         __                               &kp B       &kp M        &kp W        &kp V       &kp Z     &sk RSHFT
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯  ╭───────────┬─────────┼─────────┤ ╭─────────┼─────────┬───────────╮  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
-           __         __           __        &kp DOWN      &kp UP                 &qlt NUM BSPC LEADER      __         __    &kp RET  &kp SPACE                    &kp LEFT    &kp RIGHT       __           __         __  
+           __         __        &kp CAPS     &kp DOWN      &kp UP                     LEADER     FUNC       __         __    &kp RET  &kp SPACE                    &kp LEFT    &kp RIGHT       __           __         __  
 //     ╰─────────┴─────────────┴─────────────┴─────────────┴─────────────╯               ╰───────────┴─────────┴─────────╯ ╰─────────┴─────────┴───────────╯               ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────╯
-      >;
+      >
     };
 
     FUNCTION {
@@ -195,13 +167,13 @@ MAKE_QST(qst, &sk, &kp)
 //     ╭─────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────╮                                               ╭─────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────╮
            __         __           __           __          __           __         __                                                        __         __          __           __           __           __         __
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤                                               ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
-           __         xx           xx           xx          xx           xx         __                                                        __         xx         &kp N7      &kp N8       &kp N9         xx         __
+           __      &kp EXCL      &kp AT      &kp HASH    &kp DOLLAR   &kp PRCNT     __                                                        __     &kp EQUAL      &kp N7      &kp N8       &kp N9      &kp UNDER     __
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤    ╭─────────┬─────────╮ ╭─────────┬─────────╮    ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
-           __         xx           xx           xx          xx           xx         __            __        __        __        __            __         xx         &kp N4      &kp N5       &kp N6         xx         __
+           __      &kp CARET    &kp LBRC     &kp LBKT    &kp LPAR     &kp BSLH      __            __        __        __        __            __     &kp MINUS      &kp N4      &kp N5       &kp N6       &kp N0       __
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────╯             ├─────────┤ ├─────────┤             ╰─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
-           __         xx           xx           xx          xx           xx                                 __        __                                 xx         &kp N1      &kp N2       &kp N3         xx         __
+           __      &kp GRAVE    &kp RBRC     &kp RBKT    &kp RPAR     &kp QMARK                              __        __                            &kp PLUS       &kp N1      &kp N2       &kp N3      &kp TILDE     __
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯  ╭───────────┬─────────┼─────────┤ ╭─────────┼─────────┬───────────╮  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
-           __         __           __           xx          xx                           xx       __        __        __        xx      &kp N0                        xx          xx           __           __         __
+           __         __           __           xx          xx                           xx       __        __        __        xx        xx                       &kp FSLH    &kp ASTRK       __           __         __
 //     ╰─────────┴─────────────┴─────────────┴─────────────┴─────────────╯               ╰───────────┴─────────┴─────────╯ ╰─────────┴─────────┴───────────╯               ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────╯
       >;
     };
