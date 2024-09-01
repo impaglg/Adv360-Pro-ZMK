@@ -33,7 +33,7 @@
 #define BRIGHT_INC              &kp C_BRIGHTNESS_INC
 #define BRIGHT_DEC              &kp C_BRIGHTNESS_DEC
 
-#define RGB_MEFS_CMD            &rgb_ug RGB_MEFS_CMD
+#define RGB_MEFS_CMD_           &rgb_ug RGB_MEFS_CMD
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
