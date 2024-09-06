@@ -11,6 +11,7 @@
 #define DVRK                    0
 // #define CYRIL                   1
 #define NUM                     1
+// #define WINM                    2
 #define FUNC                    2
 #define SYST                    3
 #define GAME                    4
@@ -25,7 +26,7 @@
 
 // CONFIG
 #define LEADER                  &qlt NUM BSPC
-#define FUNCT                   &qlt FUNC RET
+#define FUNCT                   &qlt FUNC DEL
 
 // MEDIA
 #define PLAY_PAUSE              &kp C_PLAY_PAUSE
@@ -41,19 +42,6 @@
 
 // BLUETOOTH
 #define RGB_MEFS_CMD_           &rgb_ug RGB_MEFS_CMD
-
-// CYRILLIC
-// #define а                       &uc 0430
-// #define б                       &uc 0431
-// #define в                       &uc 0432
-// #define г                       &uc 0433
-// #define д                       &uc 0434
-
-// #define А                       &uc 0410
-// #define Б                       &uc 0411
-// #define В                       &uc 0412
-// #define Г                       &uc 0413
-// #define Д                       &uc 0414
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
@@ -131,8 +119,8 @@ MAKE_QLT(qht, &kp, &kp)
 
   };
   
-  // think about making the CAPS LOCK key also a CAPS WORD key by default, I have to use the tap dance feature I think...
-  // and also make "Alt_Gr" a sticky key for both sides
+  // Think about making the CAPS LOCK key also a CAPS WORD key by default, I have to use the tap dance feature I think...
+  // And also make "Alt_Gr" a sticky key for both sides
   // 
   
   keymap {
@@ -146,11 +134,11 @@ MAKE_QLT(qht, &kp, &kp)
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤                                               ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
          &kp TAB   &kp SEMI    &kp COMMA     &kp DOT       &kp P        &kp Y       __                                                        __        &kp F       &kp G        &kp C        &kp R       &kp L     &kp MINUS
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤    ╭─────────┬─────────╮ ╭─────────┬─────────╮    ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
-         &kp ESC    &kp A        &kp O        &kp E        &kp U        &kp I       __         &kp LCTRL &kp LGUI  &kp LALT  &kp LCTRL        __        &kp D       &kp H        &kp T        &kp N       &kp S     &kp FSLH
+         &kp ESC    &kp A        &kp O        &kp E        &kp U        &kp I       __         &kp LCTRL &kp LALT  &kp LALT  &kp LCTRL        __        &kp D       &kp H        &kp T        &kp N       &kp S     &kp FSLH
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────╯             ├─────────┤ ├─────────┤             ╰─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
-        &sk LSHFT  &kp SQT       &kp Q        &kp J        &kp K        &kp X                               __         __                               &kp B       &kp M        &kp W        &kp V       &kp Z     &sk RSHFT
+        &sk LSHFT  &kp SQT       &kp Q        &kp J        &kp K        &kp X                               __     &kp LGUI                             &kp B       &kp M        &kp W        &kp V       &kp Z     &sk RSHFT
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯  ╭───────────┬─────────┼─────────┤ ╭─────────┼─────────┬───────────╮  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
-           __      &kp GRAVE   &caps_word    &kp DOWN      &kp UP                     LEADER    &sk RALT    __         __     FUNCT   &kp SPACE                    &kp LEFT    &kp RIGHT    &kp LBKT     &kp RBKT      __  
+           __      &kp GRAVE   &caps_word    &kp DOWN      &kp UP                     LEADER     FUNCT      __         __    &kp RET  &kp SPACE                    &kp LEFT    &kp RIGHT    &kp LBKT     &kp RBKT      __  
 //     ╰─────────┴─────────────┴─────────────┴─────────────┴─────────────╯               ╰───────────┴─────────┴─────────╯ ╰─────────┴─────────┴───────────╯               ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────╯
       >;
     };
