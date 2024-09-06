@@ -25,7 +25,7 @@
 
 // CONFIG
 #define LEADER                  &qlt NUM BSPC
-#define FUNCT                   &qst FUNC RALT
+#define FUNCT                   &qlt FUNC RET
 
 // MEDIA
 #define PLAY_PAUSE              &kp C_PLAY_PAUSE
@@ -118,8 +118,8 @@
     )
 
 MAKE_QLT(qlt, &mo, &kp)
-MAKE_QLT(qst, &mo, &sk)
 MAKE_QLT(qht, &kp, &kp)
+// MAKE_QLT(qst, &mo, &sk)
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
@@ -131,9 +131,9 @@ MAKE_QLT(qht, &kp, &kp)
 
   };
   
-  // think about making the CAPS LOCK key also a CAPS WORD key by default, I have to use the tap dance feature
-  // set the UP and LEFT arrow keys to output "Alt_Gr" when held with &qht
+  // think about making the CAPS LOCK key also a CAPS WORD key by default, I have to use the tap dance feature I think...
   // and also make "Alt_Gr" a sticky key for both sides
+  // 
   
   keymap {
 
@@ -150,7 +150,7 @@ MAKE_QLT(qht, &kp, &kp)
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────╯             ├─────────┤ ├─────────┤             ╰─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
         &sk LSHFT  &kp SQT       &kp Q        &kp J        &kp K        &kp X                               __         __                               &kp B       &kp M        &kp W        &kp V       &kp Z     &sk RSHFT
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯  ╭───────────┬─────────┼─────────┤ ╭─────────┼─────────┬───────────╮  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
-           __      &kp GRAVE   &caps_word    &kp DOWN      &kp UP                     LEADER     FUNCT      __         __    &kp RET  &kp SPACE                    &kp LEFT    &kp RIGHT    &kp LBKT     &kp RBKT      __  
+           __      &kp GRAVE   &caps_word    &kp DOWN      &kp UP                     LEADER    &sk RALT    __         __     FUNCT   &kp SPACE                    &kp LEFT    &kp RIGHT    &kp LBKT     &kp RBKT      __  
 //     ╰─────────┴─────────────┴─────────────┴─────────────┴─────────────╯               ╰───────────┴─────────┴─────────╯ ╰─────────┴─────────┴───────────╯               ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────╯
       >;
     };
