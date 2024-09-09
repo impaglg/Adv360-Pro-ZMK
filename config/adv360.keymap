@@ -4,20 +4,25 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/backlight.h>
 
+// I need to make a mapping for the Italian accents
 #include "zmk-helpers/helper.h"
+#include "zmk-helpers/unicode-chars/french.dtsi"
+#include "zmk-helpers/unicode-chars/russian.dtsi"
+#include "zmk-helpers/unicode-chars/german.dtsi"
+#include "zmk-helpers/unicode-chars/greek.dtsi"
 #include "zmk-helpers/unicode-chars/currency.dtsi"
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 #define DVRK                    0
-// #define CYRIL                   1
-#define NUM                     1
+#define CYRIL                   1
+#define NUM                     2
 // #define WINM                    2
-#define FUNC                    2
-#define SYST                    3
-#define GAME                    4
+#define FUNC                    3
+#define SYST                    4
+#define GAME                    5
 // #define GFPS                    4
-#define LOW                     5
+#define LOW                     6
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
@@ -122,7 +127,9 @@ MAKE_QLT(qht, &kp, &kp)
   
   // Think about making the CAPS LOCK key also a CAPS WORD key by default, I have to use the tap dance feature I think...
   // And also make "Alt_Gr" a sticky key for both sides
-  // 
+  // Make a mapping for the EUR, CENT, POUND, RUBLE, YEN and YUAN keys in the number layer
+  // I need to understand why I cannot input unicode strings
+  // I also need to make a mapping for the Italian accents
   
   keymap {
 
@@ -138,6 +145,22 @@ MAKE_QLT(qht, &kp, &kp)
          &kp ESC    &kp A        &kp O        &kp E        &kp U        &kp I       __         &kp LCTRL &kp LALT  &kp LALT  &kp LCTRL        __        &kp D       &kp H        &kp T        &kp N       &kp S     &kp FSLH
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────╯             ├─────────┤ ├─────────┤             ╰─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
         &sk LSHFT  &kp SQT       &kp Q        &kp J        &kp K        &kp X                               __     &kp LGUI                             &kp B       &kp M        &kp W        &kp V       &kp Z     &sk RSHFT
+//     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯  ╭───────────┬─────────┼─────────┤ ╭─────────┼─────────┬───────────╮  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
+           __      &kp GRAVE   &caps_word    &kp DOWN      &kp UP                     LEADER     FUNCT      __         __    &kp RET  &kp SPACE                    &kp LEFT    &kp RIGHT    &kp LBKT     &kp RBKT      __  
+//     ╰─────────┴─────────────┴─────────────┴─────────────┴─────────────╯               ╰───────────┴─────────┴─────────╯ ╰─────────┴─────────┴───────────╯               ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────╯
+      >;
+    };
+
+    CYRILLIC {      
+      bindings = <
+//     ╭─────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────╮                                               ╭─────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────╮
+        &kp BSLH   &kp EXCL      &kp AT      &kp HASH    &kp DOLLAR   &kp PRCNT     __                                                     &mo LOW   &kp CARET    &kp AMPS     &kp ASTRK    &kp LPAR     &kp RPAR   &kp EQUAL
+//     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤                                               ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
+         &kp TAB   &kp SEMI    &kp COMMA     &kp DOT       &ru_p        &ru_y       __                                                        __        &ru_f       &ru_g        &kp C        &ru_r       &ru_l     &kp MINUS
+//     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤    ╭─────────┬─────────╮ ╭─────────┬─────────╮    ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
+         &kp ESC    &ru_a        &ru_o        &ru_e        &ru_u        &ru_i       __         &kp LCTRL &kp LALT  &kp LALT  &kp LCTRL        __        &ru_d       &kp H        &ru_t        &ru_n       &ru_s     &kp FSLH
+//     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────╯             ├─────────┤ ├─────────┤             ╰─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
+        &sk LSHFT  &kp SQT       &kp Q        &kp J        &ru_k        &kp X                               __     &kp LGUI                             &ru_b       &ru_m        &kp W        &ru_v       &ru_z     &sk RSHFT
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯  ╭───────────┬─────────┼─────────┤ ╭─────────┼─────────┬───────────╮  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
            __      &kp GRAVE   &caps_word    &kp DOWN      &kp UP                     LEADER     FUNCT      __         __    &kp RET  &kp SPACE                    &kp LEFT    &kp RIGHT    &kp LBKT     &kp RBKT      __  
 //     ╰─────────┴─────────────┴─────────────┴─────────────┴─────────────╯               ╰───────────┴─────────┴─────────╯ ╰─────────┴─────────┴───────────╯               ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────╯
