@@ -132,6 +132,9 @@ MAKE_QLT(qht, &kp, &kp)
   // I need to understand why I cannot input unicode strings
   // I also need to make a mapping for the Italian accents
   // Still have to understand what the hell to do with the symbols...
+  // int main(int argc, char **argv) {
+    int *number = (int *) malloc(sizeof(int) *)
+  }
   
   keymap {
 
@@ -148,7 +151,7 @@ MAKE_QLT(qht, &kp, &kp)
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────╯             ├─────────┤ ├─────────┤             ╰─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
         &sk LSHFT  &kp SQT       &kp Q        &kp J        &kp K        &kp X                          &caps_word  &kp LGUI                             &kp B       &kp M        &kp W        &kp V       &kp Z     &sk RSHFT
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯  ╭───────────┬─────────┼─────────┤ ╭─────────┼─────────┬───────────╮  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
-           __         __        &kp ESC      &kp DOWN      &kp UP                     LEADER    &mo SYM     __         __     FUNCT   &kp SPACE                    &kp LEFT    &kp RIGHT    &kp LBKT        __         __  
+           __         __        &kp ESC      &kp DOWN      &kp UP                     LEADER    &mo NUM     __         __     FUNCT   &kp SPACE                    &kp LEFT    &kp RIGHT    &kp LBKT        __         __  
 //     ╰─────────┴─────────────┴─────────────┴─────────────┴─────────────╯               ╰───────────┴─────────┴─────────╯ ╰─────────┴─────────┴───────────╯               ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────╯
       >;
     };
