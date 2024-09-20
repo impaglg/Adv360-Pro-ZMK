@@ -132,9 +132,6 @@ MAKE_QLT(qht, &kp, &kp)
   // I need to understand why I cannot input unicode strings
   // I also need to make a mapping for the Italian accents
   // Still have to understand what the hell to do with the symbols...
-  // int main(int argc, char **argv) {
-    int *number = (int *) malloc(sizeof(int) *)
-  }
   
   keymap {
 
