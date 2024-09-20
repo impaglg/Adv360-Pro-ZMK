@@ -132,6 +132,11 @@ MAKE_QLT(qht, &kp, &kp)
   // I need to understand why I cannot input unicode strings
   // I also need to make a mapping for the Italian accents
   // Still have to understand what the hell to do with the symbols...
+  // int main(int argc, char **argv) 
+  // int *num = (int *) malloc(sizeof(int) * 10);
+  // for (int i = 0; i < 10; i++);
+  // while (numone < numtwo) do this then do that;
+  // if (numone < numtwo && numtwo != numthree) then do that;
   
   keymap {
 
@@ -174,9 +179,9 @@ MAKE_QLT(qht, &kp, &kp)
 //     ╭─────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────╮                                               ╭─────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────╮
            __         __           __           __          __           __         __                                                        __         __          __           __           __           __         __
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤                                               ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
-           __      &kp EXCL      &kp AT      &kp HASH    &kp DOLLAR   &kp PRCNT     __                                                        __     &kp CARET    &kp AMPS     &kp ASTRK    &kp LPAR     &kp RPAR      __
+           __      &kp EXCL      &kp AT      &kp HASH    &kp DOLLAR   &kp PRCNT     __                                                        __     &kp CARET    &kp AMPS     &kp ASTRK    &kp LPAR     &kp RPAR      xx
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤    ╭─────────┬─────────╮ ╭─────────┬─────────╮    ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
-           __      &kp PIPE    &kp UNDER     &kp LBRC     &kp LBKT    &kp BSLH      __            __        __        __        __            __     &kp TILDE    &kp PLUS     &kp MINUS    &kp FSLH    &kp QMARK      __
+        &mo NUM    &kp PIPE    &kp UNDER     &kp LBRC     &kp LBKT    &kp BSLH      __            __        __        __        __            __     &kp TILDE    &kp PLUS     &kp MINUS    &kp FSLH    &kp QMARK      __
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────╯             ├─────────┤ ├─────────┤             ╰─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
            __      &kp GRAVE       xx           xx          xx           xx                                 __        __                                 xx          xx           xx           xx           xx         __
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯  ╭───────────┬─────────┼─────────┤ ╭─────────┼─────────┬───────────╮  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
