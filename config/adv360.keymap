@@ -85,12 +85,13 @@
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-// #define MAKE_COMBO(NAME, BINDINGS, KEYPOS) \
-  // COMBO_##NAME { \
-    // timeout-ms = <TAPPING_TERM_MS>; \
-    // key-positions = <KEYPOS>; \
-    // bindings = <BINDINGS>; \
-  // };
+#define MAKE_COMBO(NAME, BINDINGS, KEYPOS) \
+  COMBO_##NAME { \
+    timeout-ms = <TAPPING_TERM_MS>; \
+    key-positions = <KEYPOS>; \
+    bindings = <BINDINGS>; \
+    layers = <SYM>;
+  };
 
 // #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
     // ZMK_HOLD_TAP(NAME, \
@@ -116,6 +117,8 @@ MAKE_QLT(qlt, &mo, &kp)
 MAKE_QLT(qht, &kp, &kp)
 // MAKE_QLT(qst, &mo, &sk)
 
+MAKE_COMBO(RARROW, MINUS GT, 17 42)
+
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 / {
@@ -132,11 +135,6 @@ MAKE_QLT(qht, &kp, &kp)
   // I need to understand why I cannot input unicode strings
   // I also need to make a mapping for the Italian accents
   // Still have to understand what the hell to do with the symbols...
-  // int main(int argc, char **argv) 
-  // int *num = (int *) malloc(sizeof(int) * 10);
-  // for (int i = 0; i < 10; i++);
-  // while (numone < numtwo) do this then do that;
-  // if (numone < numtwo && numtwo != numthree) then do that;
   
   keymap {
 
@@ -181,9 +179,9 @@ MAKE_QLT(qht, &kp, &kp)
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤                                               ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
            __      &kp EXCL      &kp AT      &kp HASH    &kp DOLLAR   &kp PRCNT     __                                                        __     &kp CARET    &kp AMPS     &kp ASTRK    &kp LPAR     &kp RPAR      xx
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤    ╭─────────┬─────────╮ ╭─────────┬─────────╮    ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
-        &mo NUM    &kp PIPE    &kp UNDER     &kp LBRC     &kp LBKT    &kp BSLH      __            __        __        __        __            __     &kp TILDE    &kp PLUS     &kp MINUS    &kp FSLH    &kp QMARK      __
+        &mo NUM    &kp PIPE    &kp UNDER     &kp LBRC     &kp LBKT    &kp BSLH      __            __        __        __        __            __     &kp TILDE    &kp PLUS     &kp MINUS    &kp FSLH     &kp SEMI      __
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────╯             ├─────────┤ ├─────────┤             ╰─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
-           __      &kp GRAVE       xx           xx          xx           xx                                 __        __                                 xx          xx           xx           xx           xx         __
+           __      &kp GRAVE       xx           xx          xx           xx                                 __        __                                 xx          xx           xx           xx        &kp QMARK     __
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯  ╭───────────┬─────────┼─────────┤ ╭─────────┼─────────┬───────────╮  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
            __         __           __           xx          xx                           xx       __        __        __        xx        xx                         xx           xx           __           __         __
 //     ╰─────────┴─────────────┴─────────────┴─────────────┴─────────────╯               ╰───────────┴─────────┴─────────╯ ╰─────────┴─────────┴───────────╯               ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────╯
