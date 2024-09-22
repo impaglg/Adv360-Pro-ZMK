@@ -90,7 +90,7 @@
     timeout-ms = <TAPPING_TERM_MS>; \
     key-positions = <KEYPOS>; \
     bindings = <BINDINGS>; \
-    layers = <SYM>;
+    layers = <SYM>; \
   };
 
 // #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
