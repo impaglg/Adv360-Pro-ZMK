@@ -10,7 +10,7 @@
 #include "zmk-helpers/unicode-chars/german.dtsi"
 #include "zmk-helpers/unicode-chars/greek.dtsi"
 #include "zmk-helpers/unicode-chars/currency.dtsi"
-#include "zmk-auto-layer/num_word.dtsi"
+#include "zmk-auto-layer/dts/behaviors/num_word.dtsi"
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
