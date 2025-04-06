@@ -42,16 +42,16 @@
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-#define MAKE_QLT(NAME, HOLD, TAP) \
-    ZMK_HOLD_TAP(NAME, \
-        flavor = "hold-preferred"; \
-        tapping-term-ms = <TAPPING_TERM_MS>; \
-        quick-tap-ms = <QUICK_TAP_MS>; \
-        bindings = <HOLD>, <TAP>; \
-        retro-tap; \
-    )
+// #define MAKE_QLT(NAME, HOLD, TAP) \
+    // ZMK_HOLD_TAP(NAME, \
+        // flavor = "hold-preferred"; \
+        // tapping-term-ms = <TAPPING_TERM_MS>; \
+        // quick-tap-ms = <QUICK_TAP_MS>; \
+        // bindings = <HOLD>, <TAP>; \
+        // retro-tap; \
+    // )
 
-MAKE_QLT(qlt, &mo, &kp)
+// MAKE_QLT(qlt, &mo, &kp)
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
