@@ -57,6 +57,14 @@
 
 / {
   
+    behaviors {
+      #include "macros.dtsi"
+      #include "version.dtsi"
+
+        MAKE_QLT(qlt, &mo, &kp)
+        
+    };
+
   keymap {
     compatible = "zmk,keymap";
 
