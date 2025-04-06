@@ -78,7 +78,7 @@
         #binding-cells = <0>;
         bindings = <&kp LPAR>, <&kp DLLR>;
         mods = <(MOD_LSFT|MOD_RSFT)>;
-      }
+      };
       
       LBKTHASH: left_bracket_hash {
         compatible = "zmk,behavior-mod-morph";
@@ -86,7 +86,7 @@
         #binding-cells = <0>;
         bindings = <&kp LBKT>, <&kp HASH>;
         mods = <(MOD_LSFT|MOD_RSFT)>;
-      }
+      };
       
       RPARAMPS: right_parenthesis_amps {
         compatible = "zmk,behavior-mod-morph";
@@ -102,7 +102,7 @@
         #binding-cells = <0>;
         bindings = <&kp RBKT>, <&kp STAR>;
         mods = <(MOD_LSFT|MOD_RSFT)>;
-      }
+      };
       
     };
 
