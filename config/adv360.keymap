@@ -12,13 +12,13 @@
 // #define NUMR                    1
 // #define LOWR                    2
 
-#define DVRK                    1
-#define TEST                    2
-#define TEST_TWO                3
-#define TEST_THREE              4
-#define TEST_DEFAULT            5
-#define NUMR                    6
-#define LOWR                    7
+#define DVRK                    0
+#define TEST                    1
+#define TEST_TWO                2
+#define TEST_THREE              3
+#define TEST_DEFAULT            4
+#define NUMR                    5
+#define LOWR                    6
 
 #define FUNC                    &none
 
