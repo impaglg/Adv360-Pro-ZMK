@@ -236,7 +236,7 @@
     };
 
     TEST_TWO {
-      display-name = "TEST";
+      display-name = "TEST_TWO";
       bindings = <
 //     ╭─────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────╮                                                  ╭─────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────╮
         &kp EQUAL    &kp EXCL      &kp AT        &kp HASH      &kp DLLR     &kp PRCNT    &to DVRK                                                     &mo LOWR   &kp CARET     &kp AMPS      &kp STAR      &kp LPAR      &kp RPAR     &kp BSLH
