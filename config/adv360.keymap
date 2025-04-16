@@ -123,11 +123,11 @@
               mods = <(MOD_LSFT|MOD_RSFT)>;
             };
 
-      SLPAR: number_seven_left_parenthesis {
+      SRPAR: number_seven_left_parenthesis {
               compatible = "zmk,behavior-mod-morph";
               label = "number_seven_left_parenthesis";
               #binding-cells = <0>;
-              bindings = <&kp N7>, <&kp LPAR>;
+              bindings = <&kp N7>, <&kp RPAR>;
               mods = <(MOD_LSFT|MOD_RSFT)>;
             };
 
