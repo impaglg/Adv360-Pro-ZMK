@@ -9,10 +9,9 @@
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 #define DVRK                    0
-#define PDVK                    1
-#define NUMR                    2
-#define FUNC                    3
-#define LOWR                    4
+#define NUMR                    1
+#define FUNC                    2
+#define LOWR                    3
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
@@ -74,155 +73,16 @@
         display-name = "Quick-Layer-Tap";
       };
 
-      OPLUS: number_one_plus {
-              compatible = "zmk,behavior-mod-morph";
-              label = "number_one_plus";
-              #binding-cells = <0>;
-              bindings = <&kp N1>, <&kp PLUS>;
-              mods = <(MOD_LSFT|MOD_RSFT)>;
-            };
+      // OPLUS: number_one_plus {
+              // compatible = "zmk,behavior-mod-morph";
+              // label = "number_one_plus";
+              // #binding-cells = <0>;
+              // bindings = <&kp N1>, <&kp PLUS>;
+              // mods = <(MOD_LSFT|MOD_RSFT)>;
+            // };
 
-      TLBKT: number_two_left_bracket {
-              compatible = "zmk,behavior-mod-morph";
-              label = "number_two_left_bracket";
-              #binding-cells = <0>;
-              bindings = <&kp N2>, <&kp LBKT>;
-              mods = <(MOD_LSFT|MOD_RSFT)>;
-            };
-
-      TLBRC: number_three_left_brace {
-              compatible = "zmk,behavior-mod-morph";
-              label = "number_three_left_brace";
-              #binding-cells = <0>;
-              bindings = <&kp N3>, <&kp LBRC>;
-              mods = <(MOD_LSFT|MOD_RSFT)>;
-            };
-
-      FLPAR: number_four_left_parenthesis {
-              compatible = "zmk,behavior-mod-morph";
-              label = "number_four_left_parenthesis";
-              #binding-cells = <0>;
-              bindings = <&kp N4>, <&kp LPAR>;
-              mods = <(MOD_LSFT|MOD_RSFT)>;
-            };
-
-      FEQUAL: number_five_equal {
-              compatible = "zmk,behavior-mod-morph";
-              label = "number_five_equal";
-              #binding-cells = <0>;
-              bindings = <&kp N5>, <&kp EQUAL>;
-              mods = <(MOD_LSFT|MOD_RSFT)>;
-            };
-
-      SAMPS: number_six_amps {
-              compatible = "zmk,behavior-mod-morph";
-              label = "number_six_amps";
-              #binding-cells = <0>;
-              bindings = <&kp N6>, <&kp AMPS>;
-              mods = <(MOD_LSFT|MOD_RSFT)>;
-            };
-
-      SRPAR: number_seven_left_parenthesis {
-              compatible = "zmk,behavior-mod-morph";
-              label = "number_seven_left_parenthesis";
-              #binding-cells = <0>;
-              bindings = <&kp N7>, <&kp RPAR>;
-              mods = <(MOD_LSFT|MOD_RSFT)>;
-            };
-
-      ERBRC: number_eight_right_brace {
-              compatible = "zmk,behavior-mod-morph";
-              label = "number_eight_right_brace";
-              #binding-cells = <0>;
-              bindings = <&kp N8>, <&kp RBRC>;
-              mods = <(MOD_LSFT|MOD_RSFT)>;
-            };
-
-      NRBKT: number_nine_right_bracket {
-              compatible = "zmk,behavior-mod-morph";
-              label = "number_nine_right_bracket";
-              #binding-cells = <0>;
-              bindings = <&kp N9>, <&kp RBKT>;
-              mods = <(MOD_LSFT|MOD_RSFT)>;
-            };
-
-      ZGRAVE: number_zero_grave {
-              compatible = "zmk,behavior-mod-morph";
-              label = "number_zero_grave";
-              #binding-cells = <0>;
-              bindings = <&kp N0>, <&kp GRAVE>;
-              mods = <(MOD_LSFT|MOD_RSFT)>;
-            };
-
-      BSEXCL: backslash_exclamation {
-              compatible = "zmk,behavior-mod-morph";
-              label = "backslash_exclamation";
-              #binding-cells = <0>;
-              bindings = <&kp BSLH>, <&kp EXCL>;
-              mods = <(MOD_LSFT|MOD_RSFT)>;
-            };
-
-      PRQMARK: percent_question_mark {
-              compatible = "zmk,behavior-mod-morph";
-              label = "percent_question_mark";
-              #binding-cells = <0>;
-              bindings = <&kp PRCNT>, <&kp QMARK>;
-              mods = <(MOD_LSFT|MOD_RSFT)>;
-            };
-
-      FSPIPE: forward_slash_pipe {
-              compatible = "zmk,behavior-mod-morph";
-              label = "forward_slash_pipe";
-              #binding-cells = <0>;
-              bindings = <&kp FSLH>, <&kp PIPE>;
-              mods = <(MOD_LSFT|MOD_RSFT)>;
-            };
-            
-      MIUNDER: minus_underscore {
-              compatible = "zmk,behavior-mod-morph";
-              label = "minus_underscore";
-              #binding-cells = <0>;
-              bindings = <&kp MINUS>, <&kp UNDER>;
-              mods = <(MOD_LSFT|MOD_RSFT)>;
-            };
-
-      DLAT: dollar_at {
-              compatible = "zmk,behavior-mod-morph";
-              label = "dollar_at";
-              #binding-cells = <0>;
-              bindings = <&kp DLLR>, <&kp AT>;
-              mods = <(MOD_LSFT|MOD_RSFT)>;
-            };
-
-      CASTAR: caret_asterisk {
-              compatible = "zmk,behavior-mod-morph";
-              label = "caret_asterisk";
-              #binding-cells = <0>;
-              bindings = <&kp CARET>, <&kp STAR>;
-              mods = <(MOD_LSFT|MOD_RSFT)>;
-            };
-
-      HATILDE: hash_tilde {
-              compatible = "zmk,behavior-mod-morph";
-              label = "hash_tilde";
-              #binding-cells = <0>;
-              bindings = <&kp HASH>, <&kp TILDE>;
-              mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
 
     };
-
-    //  +  ` @ # $ %     ^ & * ? !
-    //  =  \ [ { ( <     > ) } ] ~
-    //     ; , . p y     f g c r l  / |
-    //     a o e u i     d h t n s  - _
-    //     ' q j k x     b m w v z
-
-    //     ! @ # $ %     ^ & * ? ~
-    //     \ [ { ( =     + ) } ] `
-    //     ; , . p y     f g c r l  / |
-    //     a o e u i     d h t n s  - _
-    //     ' q j k x     b m w v z
 
   keymap {
     compatible = "zmk,keymap";
@@ -231,7 +91,7 @@
       display-name = "DVORAK";
       bindings = <
 //     ╭─────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────╮                                                  ╭─────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────╮
-         &kp EQUAL    &kp N1        &kp N2       &kp N3        &kp N4         &kp N5     &to PDVK                                                     &mo LOWR    &kp N6        &kp N7        &kp N8         &kp N9       &kp N0     &kp BSLH
+         &kp EQUAL    &kp N1        &kp N2       &kp N3        &kp N4         &kp N5       __                                                         &mo LOWR    &kp N6        &kp N7        &kp N8         &kp N9       &kp N0     &kp BSLH
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤                                                  ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
          &kp TAB     &kp SEMI     &kp COMMA      &kp DOT        &kp P         &kp Y        __                                                            __        &kp F         &kp G         &kp C         &kp R         &kp L     &kp FSLH
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤   ╭─────────┬─────────╮ ╭─────────┬─────────╮    ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
@@ -244,36 +104,19 @@
       >;
     };
 
-    PDVORAK {
-      display-name = "PDVORAK";
-      bindings = <
-//     ╭─────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────╮                                                  ╭─────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────╮
-         &BSEXCL     &OPLUS        &TLBKT        &TLBRC        &FLPAR        &FEQUAL     &to DVRK                                                     &mo LOWR    &SAMPS        &SRPAR        &ERBRC         &NRBKT       &ZGRAVE     &PRQMARK     
-//     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤                                                  ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
-         &kp TAB     &kp SEMI     &kp COMMA      &kp DOT        &kp P         &kp Y        __                                                            __        &kp F         &kp G         &kp C         &kp R         &kp L      &FSPIPE
-//     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤   ╭─────────┬─────────╮ ╭─────────┬─────────╮    ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
-         &kp ESC      &kp A         &kp O         &kp E         &kp U         &kp I        __         &kp LCTRL  &kp LALT   &kp LMETA  &kp RCTRL         __        &kp D         &kp H         &kp T         &kp N         &kp S      &MIUNDER
-//     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────╯             ├─────────┤ ├─────────┤              ╰─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
-         &kp LSHFT   &kp SQT        &kp Q         &kp J         &kp K         &kp X                                 __          __                                 &kp B         &kp M         &kp W         &kp V         &kp Z     &kp RSHFT
-//     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯ ╭───────────┬─────────┼─────────┤ ├─────────┼─────────┬───────────╮  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
-         &mo FUNC    &kp CAPS       &DLAT        &kp DOWN      &kp UP                   &qlt NUMR BSPC  &kp DEL     __          __     &kp RET   &kp SPACE                      &kp LEFT     &kp RIGHT      &CASTAR       &HATILDE    &mo FUNC
-//     ╰─────────┴─────────────┴─────────────┴─────────────┴─────────────╯               ╰───────────┴─────────┴─────────╯ ╰─────────┴─────────┴───────────╯                ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────╯
-      >;
-    };
-    
     NUMBERS {
       display-name = "NUMBERS";
       bindings = <
 //     ╭─────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────╮                                                   ╭─────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────╮
-           __           __           __            __             __           __          __                                                            __          __            __            __            __            __          __
+           __           __           __            __             __           __          __                                                            __          __         &to NUMR     &kp KP_EQUAL &kp KP_SLASH &kp KP_ASTERISK   __
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤                                                   ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
-           __           xx           xx            xx             xx           xx          __                                                            __          xx          &kp N7        &kp N8        &kp N9          xx          __
+           __           xx           xx            xx             xx           xx          __                                                            __          xx         &kp KP_N7     &kp KP_N8     &kp KP_N9    &kp KP_MINUS    __
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤    ╭─────────┬─────────╮ ╭─────────┬─────────╮    ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
-           __           xx           xx            xx             xx           xx          __             __        __          __         __            __          xx          &kp N4        &kp N5        &kp N6          xx          __
+           __           xx           xx            xx             xx           xx          __             __        __          __         __            __          xx         &kp KP_N4     &kp KP_N5     &kp KP_N6    &kp KP_PLUS     __
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────╯              ├─────────┤ ├─────────┤              ╰─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
-           __           xx           xx            xx             xx           xx                                   __          __                                   xx          &kp N1        &kp N2        &kp N3          xx          __
+           __           xx           xx            xx             xx           xx                                   __          __                                   xx         &kp KP_N1     &kp KP_N2     &kp KP_N3    &kp KP_ENTER    __
 //     ├─────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯  ╭───────────┬─────────┼─────────┤ ╭─────────┼─────────┬───────────╮  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────┤
-           __           __           __            xx             xx                           xx         __        __          __        xx       &kp N0                          xx            xx            __            __          __
+           __           __           __            xx             xx                           xx         __        __          __        xx      &kp KP_N0                         xx            xx        &kp kp_DOT       __          __
 //     ╰─────────┴─────────────┴─────────────┴─────────────┴─────────────╯                ╰───────────┴─────────┴─────────╯ ╰─────────┴─────────┴───────────╯                ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────╯
       >;
     };
